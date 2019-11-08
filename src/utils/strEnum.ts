@@ -1,0 +1,8 @@
+// https://typescript-jp.gitbook.io/deep-dive/type-system/literal-types#bsuno
+export default function strEnum<T extends string>(o: Array<T>): {[K in T]: K} {
+  return o.reduce((res, key) => {
+    res[key] = key;
+    return res;
+  }, Object.create(null));
+}
+
