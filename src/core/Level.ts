@@ -5,7 +5,6 @@ import * as _ from "lodash";
 import CameraComponent from "../components/CameraComponent";
 import { Actor } from "..";
 import { EventEmitter } from 'events';
-// import strEnum from "../utils/strEnum";
 
 class Level {
   public scene: THREE.Scene;
@@ -42,15 +41,15 @@ class Level {
 
   async load() {
     return Promise.all(_.map(this.actors, async actor => {
-      const loader = async () => {
-        await actor.load();
-      };
-      await loader();
+      await actor.load();
+      // const loader = async () => {
+      //   await actor.load();
+      // };
+      // await loader();
     }));
   }
 
   awake() {
-    this.setMainCamera();
     _.forEach(this.actors, actor => {
       actor.awake();
     });

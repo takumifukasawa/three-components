@@ -74,6 +74,8 @@ const init = () => {
 
 const main = async () => {
   init();
+  // TODO: ...
+  level.setMainCamera();
   engine.awake();
   // TODO: loadはengineに移譲した方が良い？
   await level.load();

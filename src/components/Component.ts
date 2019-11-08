@@ -5,7 +5,9 @@ abstract class Component {
   isAwaked: boolean = false
   awake(actor: Actor) {}
   start(actor: Actor) {}
-  load(actor: Actor) {}
+  load(actor: Actor): Promise<void> {
+    return Promise.resolve();
+  }
   setSize(width: number, height: number) {}
   fixedUpdate(actor: Actor, time: number, deltaTime: number) {}
   update(actor: Actor, time: number, deltaTime: number) {}

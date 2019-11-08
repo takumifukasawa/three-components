@@ -9,13 +9,13 @@ class TestCubeComponent extends Component {
     super();
   }
 
-  async load(actor: Actor) {
+  async load(actor: Actor): Promise<void> {
     const path = '/assets/textures/uv-checker.jpg';
     const loader = new THREE.TextureLoader();
     return new Promise(resolve => {
       loader.load(path, result => {
         const meshComponent = actor.getComponent(MeshComponent);
-        if(!meshComponent) return;
+        if(!meshComponent) throw new Error("hasnot mesh component");
         const { obj } = meshComponent;
         const material: THREE.Material | THREE.Material[] = obj.material;
         // TODO: any使いたくない
