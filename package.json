@@ -42,7 +42,7 @@
     "imports-loader": "^0.8.0",
     "jest": "^24.9.0",
     "keymirror": "^0.1.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "prettier": "^1.18.2",
     "pretty-quick": "^2.0.0",
     "terser-webpack-plugin": "^2.1.3",
